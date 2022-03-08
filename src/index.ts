@@ -15,7 +15,7 @@ createConnection().then((conn) => {
     app.use(
         cors({
             credentials: true,
-            origin: ['http://192.168.110.110:3000'],
+            origin: ['http://192.168.110.110:3000', 'http://localhost:3000'],
         })
     );
 

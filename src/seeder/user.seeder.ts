@@ -2,6 +2,7 @@ import { createConnection, getManager } from 'typeorm';
 import { User } from '../entity/user.entity';
 import faker from 'faker';
 import bcryptjs from 'bcryptjs';
+import { randomInt } from 'crypto';
 
 createConnection().then(async (conn) => {
     const repo = getManager().getRepository(User);
@@ -17,8 +18,8 @@ createConnection().then(async (conn) => {
             last_name: lname,
             email: faker.internet.email(fname, lname).toLocaleLowerCase(),
             password: await bcryptjs.hash('pw1234', 10),
+            role: { id: randomInt(1, 4) },
         });
     }
-
     process.exit(0);
 });

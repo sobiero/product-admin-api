@@ -10,7 +10,6 @@ import { Chart, Export, Orders } from './controller/order.controller';
 import { PermissionMiddleware } from './middleware/permission.middleware';
 
 export const routes = (router: Router) => {
-
     router.post('/api/register', Register);
     router.post('/api/login', Login);
     router.get('/api/user', AuthMiddleware, AuthenticatedUser);

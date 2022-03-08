@@ -1,3 +1,5 @@
+uploads/*
+
 #Config files
 .env
 ormconfig.json
